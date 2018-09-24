@@ -1,27 +1,27 @@
 #Inspiration
-Navigating a large supermarket can be difficult and time-consuming. Even though there are aisle descriptions, they are often vague and it's impossible to remember where each category of products is located.
+Supermarkets and grocery stores all across the world are built to be confusing. They hide the most necessary items in the farthest corners, all in the attempt of trying to lure buyers into buying other products. That's where Markt comes in.
 
 #What it does
-Using various APIs and algorithms, our app generates a store layout bitmap and animates the path that the consumer should take to minimize the time spent at the store and to pick up all groceries.
+By implementing various APIs and algorithms, Markt generates a supermarket layout bitmap and also animates the path that the consumer should take to minimize the time spent at the store and to pick up all the groceries on their list.
 
-#How we built it
+#How Markt works
 ##Bitmap
-As we didn't have access to an actual store layout, we created a mock bitmap in excel with 0's representing free space and 1's representing obstacles such as aisles, cashier counters etc. We then translated this into a bitmap of the whole store layout in Java.
+Actual store layouts were hard to find in the time-constraints given, so I created a mock bitmap using excel with 0's representing free space and 1's representing obstacles such as aisles, cashier counters etc. I then translated this into a bitmap of the whole store layout in Java.
 
 ##Pathfinding
-Our app uses an existing database from Supermarket API which when given a product name returns aisle number and other product information for many prominent retailers. Using information about the location such as "Aisle 11 Back" we would then plot an exact coordinate on the bitmap that fills within the bounds of Aisle 11 back. After adding all our products to the list and having all the bitmap coordinates, we then had to find the most optimal route between all the points. This is essentially a different use case for the Traveling Salesman Problem except starting and ending point are the same, so using a slightly modified genetic algorithm we calculated the most efficient (or close to most efficient) route. Because the algorithm did not account for obstacles between the positions of the products, we implemented the A* algorithm on the bitmap matrix to find the best path between the individual points to avoid aisle and other obstacles.
+Markt uses an existing database from Supermarket API: when given a product name, it returns the aisle number and other product information based on models from prominent retailers across the world. Using information about the location such as "Aisle 11 Back," Markt is then able to plot an exact coordinate on the bitmap that fills within the bounds of "Aisle 11 Back." After adding all the user's products to the list and logging all the bitmap coordinates, the challenge then became finding the most optimal route between all the points. This is essentially a different use case of the Traveling Salesman Problem except that the starting and ending point are essentially the same, so using a slightly modified Dijkstra's algorithm I calculated the most efficient route. Because the algorithm did not account for obstacles between the positions of the products, I also implemented the A* algorithm on the bitmap matrix to find the best path between the individual points to avoid aisle and other obstacles.
 
 ##Firebase and UI
-After adding an item to the grocery list and clicking the start button to map the path, the Supermarket API searches for that item's aisle number. The aisle number is a key for the possible coordinates within that aisle and a "best fit" position is returned. A major part of this app was designing the UI as in 8bit even though the animation was functional it was hard to interpret the store layout and where to go. We added numerous features to clarify this, such as animating the current path to the closest item, adding a pulse for the item we need to go to, and varying the sizes of the item points. See image above.
+After adding an item to the grocery list and clicking the start button to map the path, the Supermarket API searches for that item's aisle number. The aisle number is a key for the possible coordinates within that aisle and a "best fit" position is returned. A major part of this app was designing the UI. In 8bit, even though the animation was fully functional, it was hard to interpret the store layout and where the user needed to go. I added numerous features for clarification, such as animating the current path to the closest item, adding a pulse for the next item in progress, and varying the sizes of the item points.
 
-#Challenges we ran into
-Pathfinding algorithms!!!! We had no clue where to start with this except that one of our members had some prior experience with TSP and we had heard of A*. Understanding how exactly these algorithms worked and how to integrate it took a lot of time. We spent at least 40% of our time designing the UI. Figuring out how to represent the store layout and then actually making the bitmap took some time as well.
+#Challenges I ran into
+My biggest challenge was definitely implementing pathfinding algorithms. At the beginning of designing Markt, I had no background and minimal understanding of pathfinding algorithms outside of Dijkstra, so understanding how exactly A* and TSP worked and how to integrate them took a majority of my time. In addition, I spent at least 40% of my time designing the UI. Graphically representing the store layout and constructing the actual bitmap took a lot of time as well.
 
-#Accomplishments that we're proud of
-Fully functional app that is based upon a local safeway. 
+#Accomplishments that I'm proud of
+The app is fully functional (and scalable to multiple real-life supermarket layouts).
 
-#What we learned
-A lot! Android development (We hadn't really developed in Android only knew Java from CS class and had some experience with Studio), Pathfinding Algorithms, Firebase integration.
+#What I learned
+Honestly more than I could have ever imagined. Although I'm proficient at Java, I had very minimal knowledge of Android Studio going in, so just finishing this project is a plus. Integrating Firebase into an Android app for the first time was also a fun experience, and so was learning the nooks and crannies of A* and TSP!
 
 #What's next for PinPoint
-Integrating the shopping list with another app such as Evernote so consumers can import lists. Actually finding real store layouts (they exist somewhere) and figuring out how to efficiently create bitmaps of each.
+Providing real-time cross-platform list integration for ease of user access, and potentially adding a built-in social media platform for Markt consumers and retailers. More importantly, finding a database of real store layouts and writing algorithms (ML, AI, etc.) to efficiently convert those layouts into clean, effective bitmaps.
