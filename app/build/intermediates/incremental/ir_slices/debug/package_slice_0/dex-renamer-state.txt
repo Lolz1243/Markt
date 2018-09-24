@@ -1,0 +1,4 @@
+#Sun Sep 23 21:50:07 EDT 2018
+base.0=C\:\\Users\\nvytla7\\Downloads\\PinPoint-master\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\0
+path.0=classes.dex
+renamed.0=classes.dex
