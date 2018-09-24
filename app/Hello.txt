@@ -1,3 +1,0 @@
-Hi all! The app folder hosts most, if not all of the app internals, so pay special attention to /src/ and the gradle in case you want to help troubleshoot the app or play with it in any way!
-
-Best of luck and happy coding!
