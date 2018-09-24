@@ -23,7 +23,7 @@ The app is fully functional (and scalable to multiple real-life supermarket layo
 # What I learned
 Honestly more than I could have ever imagined. Although I'm proficient at Java, I had very minimal knowledge of Android Studio going in, so just finishing this project is a plus. Integrating Firebase into an Android app for the first time was also a fun experience, and so was learning the nooks and crannies of A* and TSP!
 
-# What's next for PinPoint
+# What's next for Markt
 Providing real-time cross-platform list integration for ease of user access, and potentially adding a built-in social media platform for Markt consumers and retailers. More importantly, finding a database of real store layouts and writing algorithms (ML, AI, etc.) to efficiently convert those layouts into clean, effective bitmaps.
 
 Made with ♥ in 2018
