@@ -26,4 +26,4 @@ Honestly more than I could have ever imagined. Although I'm proficient at Java, 
 # What's next for Markt
 Providing real-time cross-platform list integration for ease of user access, and potentially adding a built-in social media platform for Markt consumers and retailers. More importantly, finding a database of real store layouts and writing algorithms (ML, AI, etc.) to efficiently convert those layouts into clean, effective bitmaps.
 
-Made with ♥ in 2018
+Made with ♥ in 2017
